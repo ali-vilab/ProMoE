@@ -14,10 +14,6 @@ log_interval: 10
 DiT_B_config:
   qk_norm: False
 
-###### For validation
-val_every_step: 50000
-val_loss_batch_size: 128
-val_log_interval: 10
 
 ###### For sample
 step_list_for_sample: [500000]

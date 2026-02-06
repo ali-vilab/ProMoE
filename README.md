@@ -83,10 +83,10 @@ Image generation is performed via the `sample.py` script, utilizing the same YAM
 
 ```bash
 # use default setting
-python sample.py --config configs/004_ProMoE_L.yaml
+CUDA_VISIBLE_DEVICES=0 python sample.py --config configs/004_ProMoE_L.yaml
 
 # use custom setting
-python sample.py \
+CUDA_VISIBLE_DEVICES=0 python sample.py \
   --config configs/004_ProMoE_L.yaml \
   --step_list_for_sample 200000,300000 \
   --guide_scale_list 1.0,1.5,4.0 \
@@ -95,7 +95,8 @@ python sample.py \
 
 **Notes:**
 
-- By default, the script loads the checkpoint at **500k steps** and generates **50,000 images**, sweeping across guidance scales (CFG) of **1.0** and **1.5**.
+- By default, the script loads the checkpoint at **500k steps** and generates **50,000 images** using a **single GPU**, sweeping across guidance scales (CFG) of **1.0** and **1.5**.
+- To use **multiple GPUs** for sampling, specify the devices using `CUDA_VISIBLE_DEVICES` or by adding `sample_gpu_ids` in the configuration file. Please be aware that multi-GPU inference produces a globally different random sequence (e.g., class labels) compared to single-GPU inference.
 - Generated images are saved as PNG files in the `sample/` directory within the same parent directory as the checkpoint folder. Filenames include both the sample index and class label.
 - If you only want to calculate FID, you can set `cfg.save_inception_features=True` to save Inception features and reduce `cfg.save_img_num`.
 
@@ -120,7 +121,7 @@ Download the reference statistics file [VIRTUAL_imagenet256_labeled.npz](https:/
 ### 3. Execution
 To calculate the metrics, run the evaluation script by specifying the path to your folder of generated images.
 ```bash
-python run_eval.py /path/to/generated/images
+CUDA_VISIBLE_DEVICES=0 python run_eval.py /path/to/generated/images
 ```
 
 ## Acknowledgements
