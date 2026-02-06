@@ -1,0 +1,31 @@
+model_name: "DiT_B"
+
+gpu_ids: [0, 1, 2, 3]
+
+###### For train
+image_size: 256
+total_train_batch_size: 256
+lr: 0.0001
+weight_decay: 0
+use_pre_latents: True
+resume_checkpoint: True
+log_interval: 10
+
+DiT_B_config:
+  qk_norm: False
+
+###### For validation
+val_every_step: 50000
+val_loss_batch_size: 128
+val_log_interval: 10
+
+###### For sample
+step_list_for_sample: [500000]
+# sample_every_step: 50000
+num_fid_samples: 50000
+sample_batch_size: 128
+sample_steps: 250
+sample_shift: 1.0
+guide_scale_list: [1.0, 1.5]
+save_img_num: 50000
+save_inception_features: False

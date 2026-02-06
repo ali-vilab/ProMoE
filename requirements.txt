@@ -1,0 +1,13 @@
+colorlog==6.9.0
+diffusers==0.32.2
+easydict==1.13
+einops==0.8.1
+numpy==1.26.4
+Pillow==11.1.0
+PyYAML==6.0.2
+timm==1.0.15
+torch==2.6.0
+torchvision==0.21.0
+tqdm==4.67.1
+tensorboard
+accelerate==1.5.1

@@ -1,0 +1,5 @@
+tensorflow-gpu==2.6.0
+scipy
+requests
+tqdm
+protobuf==3.19.6
