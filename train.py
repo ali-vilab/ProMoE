@@ -27,6 +27,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from torch.nn.parallel import DistributedDataParallel
 from collections import OrderedDict
 from utils import deep_update, find_free_port
+from torch.nn.utils import clip_grad_norm_
 
 os.environ["TORCH_DISTRIBUTED_DEBUG"] = "DETAIL"
 
@@ -560,6 +561,7 @@ def worker(gpu, cfg):
         # backward
         scaler.scale(loss / cfg.grad_mix).backward()
         scaler.unscale_(optimizer)
+        grad_norm = clip_grad_norm_(model.parameters(), cfg.max_grad_norm)
         scaler.step(optimizer)
         scaler.update()
         optimizer.zero_grad()          

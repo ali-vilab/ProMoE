@@ -198,6 +198,7 @@ cfg.weighting_scheme = 'logit_normal'
 cfg.logit_mean = 0.0
 cfg.logit_std = 1.0
 cfg.mode_scale = 1.29
+cfg.max_grad_norm = 0.5
 
 cfg.param_dtype = torch.bfloat16
 
