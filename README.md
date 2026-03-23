@@ -33,9 +33,21 @@ This codebase supports:
 
 
 ## 🔥 Updates
+- __[2026.03]__: Release the model weights, generated 50K images, and evaluation results on both [Hugging Face](https://huggingface.co/weilllllls/ProMoE) and [ModelScope](https://modelscope.cn/models/weilllllls/ProMoE)!
 - __[2026.02]__: Release the training, sampling, and evaluation code of ProMoE.
 - __[2026.01]__: 🎉 Our paper has been accepted by **ICLR 2026**!
 - __[2025.10]__: Release the [paper](https://arxiv.org/abs/2510.24711) of ProMoE.
+
+
+## 🗂️ Pretrained Models
+
+We have released the model weights, generated 50K images, and corresponding evaluation results on both Hugging Face and ModelScope.
+
+| Model | Platform | Weights | 50K Images | Eval Results (CFG=1.0) | Eval Results (CFG=1.5) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **ProMoE-B-Flow** <br> (500K) | Hugging Face <br> ModelScope | [Link](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_B/ckpt_step_500000.pth) <br> [Link](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_B%2Fckpt_step_500000.pth?status=2) | [cfg=1.0](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_B/images_cfg1.0.npz), [cfg=1.5](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_B/images_cfg1.5.npz) <br> [cfg=1.0](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_B%2Fimages_cfg1.0.npz?status=2), [cfg=1.5](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_B%2Fimages_cfg1.5.npz?status=2) | [FID 24.44, IS 60.38](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_B/images_eval_openai_cfg1.0.txt) <br> [FID 24.44, IS 60.38](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_B%2Fimages_eval_openai_cfg1.0.txt?status=1) | [FID 6.39, IS 154.21](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_B/images_eval_openai_cfg1.5.txt) <br> [FID 6.39, IS 154.21](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_B%2Fimages_eval_openai_cfg1.5.txt?status=1) |
+| **ProMoE-L-Flow** <br> (500K) | Hugging Face <br> ModelScope | [Link](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_L/ckpt_step_500000.pth) <br> [Link](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_L%2Fckpt_step_500000.pth?status=2) | [cfg=1.0](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_L/images_cfg1.0.npz), [cfg=1.5](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_L/images_cfg1.5.npz) <br> [cfg=1.0](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_L%2Fimages_cfg1.0.npz?status=2), [cfg=1.5](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_L%2Fimages_cfg1.5.npz?status=2) | [FID 11.61, IS 100.82](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_L/images_eval_openai_cfg1.0.txt) <br> [FID 11.61, IS 100.82](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_L%2Fimages_eval_openai_cfg1.0.txt?status=1) | [FID 2.79, IS 244.21](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_L/images_eval_openai_cfg1.5.txt) <br> [FID 2.79, IS 244.21](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_L%2Fimages_eval_openai_cfg1.5.txt?status=1) |
+| **ProMoE-XL-Flow** <br> (500K) | Hugging Face <br> ModelScope | [Link](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_XL/ckpt_step_500000.pth) <br> [Link](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_XL%2Fckpt_step_500000.pth?status=2) | [cfg=1.0](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_XL/images_cfg1.0.npz), [cfg=1.5](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_XL/images_cfg1.5.npz) <br> [cfg=1.0](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_XL%2Fimages_cfg1.0.npz?status=2), [cfg=1.5](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_XL%2Fimages_cfg1.5.npz?status=2) | [FID 9.44, IS 114.94](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_XL/images_eval_openai_cfg1.0.txt) <br> [FID 9.44, IS 114.94](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_XL%2Fimages_eval_openai_cfg1.0.txt?status=1) | [FID 2.59, IS 265.62](https://huggingface.co/weilllllls/ProMoE/blob/main/ProMoE_XL/images_eval_openai_cfg1.5.txt) <br> [FID 2.59, IS 265.62](https://modelscope.cn/models/weilllllls/ProMoE/file/view/master/ProMoE_XL%2Fimages_eval_openai_cfg1.5.txt?status=1) |
 
 
 ## ⚙️ Preparation
@@ -123,6 +135,7 @@ To calculate the metrics, run the evaluation script by specifying the path to yo
 ```bash
 CUDA_VISIBLE_DEVICES=0 python run_eval.py /path/to/generated/images
 ```
+
 
 ## Acknowledgements
 
